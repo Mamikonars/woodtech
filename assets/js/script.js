@@ -27,12 +27,11 @@ Array.from(document.querySelectorAll('.slide-label')).forEach(function(el) {
 (function(){
 
 let popup = document.querySelector(".popup-wrapper");
-let popupForm = document.querySelector(".popup-form");
+let popupForm = document.querySelector(".popup-form") ? document.querySelector(".popup-form") : '';
 let popupBtn = document.querySelector(".popup-btn");
 let popupClose = document.querySelector(".close-btn");
 
-
-if(popupBtn) {
+if(popupForm) {
 popupBtn.addEventListener("click", (e) => {
   e.preventDefault;
   showPopup();
@@ -40,7 +39,7 @@ popupBtn.addEventListener("click", (e) => {
   //button target (from where btn clicked)
   popupForm.querySelector('[name="target"]').value = popupBtn.dataset.target;
 });
-}
+ 
 
 popupClose.addEventListener("click", (e) => {
   e.preventDefault;
@@ -71,6 +70,9 @@ function removePopup() {
 function bodyScroll() {
   document.body.classList.toggle("no-scroll");
 }
+}
+ 
+
 })();
 
 
@@ -105,6 +107,7 @@ function bodyScroll() {
 
 });
 
+//single slider
  const swiperSingle = new Swiper('.single-slider__block', {     
     effect : "fade",
     speed: 1200,
@@ -119,8 +122,38 @@ function bodyScroll() {
    pagination: {
           el: ".swiper-pagination",
           clickable: true,
-        },
-  
+        },  
 });
+
+//single gallery
+ const singleGalleryLoop = new Swiper('.single-gallery__thumbs', {
+        loop: true,
+        spaceBetween: 8,        
+        freeMode: true,
+        watchSlidesProgress: true,         
+        breakpoints: {
+          320: {
+            slidesPerView: 2,
+          },
+          676: {
+            slidesPerView: 3,
+          },
+          992: {
+            slidesPerView: 6,
+        }
+      }
+
+  });
+  const singleGallery = new Swiper(".single-gallery", {        
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
+        loop: true,
+        spaceBetween: 5,
+        thumbs: {
+          swiper: singleGalleryLoop,
+        },
+      });
 })();
 

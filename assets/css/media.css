@@ -119,6 +119,14 @@
   .contacts {
     padding: 38px 0 0;
   }
+
+  .single-gallery__thumbs .swiper-slide img {
+    max-height: 125px;
+  }
+
+  .content {
+    padding: 15px 0 55px;
+  }
 }
 
 @media screen and (max-width: 860px) {
@@ -257,6 +265,10 @@
 
   .blog-item {
     width: 48%;
+  }
+
+  .single-gallery .swiper-slide img {
+    min-height: 400px;
   }
 }
 
@@ -536,6 +548,10 @@
   .project-item {
     width: 100%;
   }
+
+  .single-gallery .swiper-slide img {
+    min-height: 300px;
+  }
 }
 
 @media screen and (max-width: 380px) {
@@ -629,6 +645,10 @@
   .map-block {
     max-width: 320px;
   }
+
+  .single-gallery .swiper-slide img {
+    min-height: 260px;
+  }
 }
 
 @media screen and (max-width: 321px) {
@@ -646,5 +666,9 @@
 
   .page-title {
     font-size: 23px;
+  }
+
+  .single-gallery .swiper-slide img {
+    min-height: 230px;
   }
 }
