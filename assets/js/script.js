@@ -31,7 +31,7 @@ let popupForm = document.querySelector(".popup-form") ? document.querySelector("
 let popupBtn = document.querySelector(".popup-btn");
 let popupClose = document.querySelector(".close-btn");
 
-if(popupForm) {
+if(popup) {
 popupBtn.addEventListener("click", (e) => {
   e.preventDefault;
   showPopup();
